@@ -1,0 +1,54 @@
+{
+  "content":{
+    "id":"H1",
+    "type":"header",
+    "comment":"main header",  
+    "containers":
+    [
+      {
+        "id":"main",
+        "bgColor":"#A9C95B",
+        "fontColor":"#FFFFFF",
+        "sections":
+        [          
+          {
+            "id":"sectionId1",
+            "width":"250px",
+            "modules":
+            [
+              {
+                "type":"menu",
+                "id":"H1MENU1",
+                "title":"Monitoring",
+                "labels":
+                [
+                  {"label":"Check Processing Servers"},
+                  {"label":"Check Designer Formats"},
+                  {"label":"Check Connect Formats"}
+                ]            
+              }
+            ]
+          },
+          {
+            "id":"sectionId2",
+            "width":"250px",
+            "modules":
+            [
+              {
+                "type":"menu",
+                "id":"H1MENU2",
+                "title":"Administration",
+                "labels":
+                [
+                  {"label":"Manage License Keys"},
+                  {"label":"Manage Processing Servers"},
+                  {"label":"Manage accounts"}
+                ] 
+              }           
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
