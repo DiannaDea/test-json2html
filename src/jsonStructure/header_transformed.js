@@ -35,19 +35,51 @@ const headerTransformed = {
                   children: 'Monitoring'
                 },
                 {
+                  component:'MyButton',
+                  props:{
+                    title:'Discover docs',
+                    href:'http://react.semantic-ui.com',
+                  },
+                  children:'click me',
+                },
+                {
                   component: 'ul',
                   children: [
                     {
                       component: 'li',
-                      children: 'Check Processing Servers'
+                      children: [
+                        {
+                          component: 'a',
+                          props: {
+                            href: 'https://reactstrap.github.io/components/navbar/'
+                          },
+                          children: 'Check Processing Servers'
+                        }
+                      ]
                     },
                     {
                       component: 'li',
-                      children: 'Check Designer Formats'
+                      children: [
+                        {
+                          component: 'a',
+                          props: {
+                            href: 'https://reactstrap.github.io/components/navbar/'
+                          },
+                          children: 'Check Designer Formats'
+                        }
+                      ]
                     },
                     {
                       component: 'li',
-                      children: 'Check Connect Formats'
+                      children: [
+                        {
+                          component: 'a',
+                          props: {
+                            href: 'https://reactstrap.github.io/components/navbar/'
+                          },
+                          children: 'Check Connect Formats'
+                        }
+                      ]
                     }
                   ]
                 }
