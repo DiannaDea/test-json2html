@@ -9,8 +9,7 @@ const headerTransformed = {
       props:{
         id: 'main',
         style: {
-          display: 'flex',
-          'background-color': '#A9C95B',
+          backgroundColor: '#A9C95B',
           color: '#FFFFFF'
         }
       },
@@ -19,8 +18,9 @@ const headerTransformed = {
           component: 'div',
           props:{  
             id:'sectionId1',
+            className:'section',
             style: {
-              width: '250px'
+              width: '250px',
             }
           },
           children: [
@@ -31,51 +31,42 @@ const headerTransformed = {
               },
               children: [
                 {
-                  component: 'div',
-                  children: 'Monitoring'
-                },
-                {
-                  component:'MyButton',
-                  props:{
-                    title:'Discover docs',
-                    href:'http://react.semantic-ui.com',
+                  component: 'HeaderMenuDropdown',
+                  props: {
+                    text: 'Monitoring'
                   },
-                  children:'click me',
-                },
-                {
-                  component: 'ul',
                   children: [
                     {
-                      component: 'li',
+                      component: 'Semantic.Dropdown.Item',
                       children: [
                         {
-                          component: 'a',
+                          component: 'Link',
                           props: {
-                            href: 'https://reactstrap.github.io/components/navbar/'
+                            to: '/check-processing-servers'
                           },
                           children: 'Check Processing Servers'
                         }
                       ]
                     },
                     {
-                      component: 'li',
+                      component: 'Semantic.Dropdown.Item',
                       children: [
                         {
-                          component: 'a',
+                          component: 'Link',
                           props: {
-                            href: 'https://reactstrap.github.io/components/navbar/'
+                            to: '/check-designer-formats'
                           },
                           children: 'Check Designer Formats'
                         }
                       ]
                     },
                     {
-                      component: 'li',
+                      component: 'Semantic.Dropdown.Item',
                       children: [
                         {
-                          component: 'a',
+                          component: 'Link',
                           props: {
-                            href: 'https://reactstrap.github.io/components/navbar/'
+                            to: '/check-connect-formats'
                           },
                           children: 'Check Connect Formats'
                         }
@@ -91,6 +82,7 @@ const headerTransformed = {
           component: 'div',
           props:{  
             id:'sectionId2',
+            className:'section',
             style: {
               width: '250px'
             }
@@ -103,23 +95,46 @@ const headerTransformed = {
               },
               children: [
                 {
-                  component: 'div',
-                  children: 'Administration'
-                },
-                {
-                  component: 'ul',
+                  component: 'HeaderMenuDropdown',
+                  props: {
+                    text: 'Administration'
+                  },
                   children: [
                     {
-                      component: 'li',
-                      children: 'Manage License Keys'
+                      component: 'Semantic.Dropdown.Item',
+                      children: [
+                        {
+                          component: 'Link',
+                          props: {
+                            to: '/manage-license-keys'
+                          },
+                          children: 'Manage License Keys'
+                        }
+                      ]
                     },
                     {
-                      component: 'li',
-                      children: 'Manage Processing Servers'
+                      component: 'Semantic.Dropdown.Item',
+                      children: [
+                        {
+                          component: 'Link',
+                          props: {
+                            to: '/manage-processing-servers'
+                          },
+                          children: 'Manage Processing Servers'
+                        }
+                      ]
                     },
                     {
-                      component: 'li',
-                      children: 'Manage accounts'
+                      component: 'Semantic.Dropdown.Item',
+                      children: [
+                        {
+                          component: 'Link',
+                          props: {
+                            to: '/manage-accounts'
+                          },
+                          children: 'Manage accounts'
+                        }
+                      ]
                     }
                   ]
                 }

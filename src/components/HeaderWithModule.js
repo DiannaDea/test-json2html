@@ -1,37 +1,33 @@
 import React from 'react';
 import * as jsonx from 'jsonx';
 import * as Semantic from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 import headerTransformed from '../jsonStructure/header_transformed'
 
-class MyButton extends React.Component {
-  handleClick = () => {
-    alert('Hello Diana')
-  }
-  componentDidMount() {
-    console.log('====mounted')
-  }
-  render() {
-    return <button {...this.props} onClick={this.handleClick}>{this.props.children}</button>
-  }
-}
+import './styles.css'
+
+const HeaderMenuDropdown = ({children, text}) => (
+  <Semantic.Dropdown text={text}>
+    <Semantic.Dropdown.Menu>
+      {children}
+    </Semantic.Dropdown.Menu>
+  </Semantic.Dropdown>
+)
 
 const getReactElement = jsonx.getReactElement.bind({
   reactComponents: {
-    MyButton
+    HeaderMenuDropdown,
+    Link
   },
   componentLibraries:{
     Semantic,
   }
 });
 
-class HeaderWithModule extends React.Component {
-  render() {
-    return (
-        <React.Fragment>
-        {getReactElement(headerTransformed)}
-        </React.Fragment>
-      );
-    }
-}
+const HeaderWithModule = () => (
+  <React.Fragment>
+    {getReactElement(headerTransformed)}
+  </React.Fragment>
+)
 
 export default HeaderWithModule;

@@ -1,18 +1,24 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import HeaderWithModule from './components/HeaderWithModule'
-import HeaderNested from './components/HeaderNested'
+// import HeaderNested from './components/HeaderNested'
+
+const Home = () => (
+  <h2>Home</h2>
+)
+
+const Body = ({location}) => (
+  <h2>{location.pathname.slice(1)}</h2>
+)
 
 function App() {
   return (
-    <div className="App">
-      <div>
-        <p>With jsonx module implementation</p>
+    <div className='App'>
+      <Router>
         <HeaderWithModule/>
-      </div>
-      <div>
-        <p>With importing nested Header structure</p>
-        <HeaderNested/>
-      </div>
+        <Route path='/' exact component={Home} />
+        <Route path='/*' component={Body} />
+      </Router>
     </div>
   );
 }
